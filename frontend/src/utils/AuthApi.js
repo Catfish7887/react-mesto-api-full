@@ -2,7 +2,7 @@
 
 class AuthApi {
   constructor() {
-    this._url = 'http://localhost:4000';
+    this._url = 'http://api.mesto.klochkoff.nomoredomains.club';
   }
 
   register({ password, email }) {

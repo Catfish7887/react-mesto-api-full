@@ -10,7 +10,7 @@ const validConfig = {
 };
 
 const apiConfig = {
-  url: 'http://localhost:4000',
+  url: 'http://api.mesto.klochkoff.nomoredomains.club',
   headers: {
     'content-type': 'application/json'
   }
