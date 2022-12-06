@@ -17,23 +17,10 @@ const NotFoundError = require('./errors/NotFoundError');
 const rateLimiter = require('./middlewares/other');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-// const allowedCors = ['https://mesto.klochkoff.nomoredomains.com', 'https://localhost:3000', 'http://localhost:3000', 'localhost:3000'];
-
 const app = express();
 mongoose.connect(process.env.DB_URL);
 
 app.use(cors());
-
-// app.use((req, res, next) => {
-//   const { origin } = req.headers;
-
-//   if (allowedCors.includes(origin)) {
-//     res.header('Access-Control-Allow-Origin', origin);
-//     res.header('Access-Control-Allow-Credentials', 'true');
-//   }
-
-//   next();
-// });
 
 app.use(rateLimiter);
 app.use(helmet());
