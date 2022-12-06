@@ -10,7 +10,7 @@
 // };
 
 const apiConfig = {
-  url: 'http://api.mesto.klochkoff.nomoredomains.club',
+  url: 'https://api.mesto.klochkoff.nomoredomains.club',
   headers: {
     'content-type': 'application/json'
   }
