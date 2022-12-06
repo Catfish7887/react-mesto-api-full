@@ -18,7 +18,7 @@ const rateLimiter = require('./middlewares/other');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
-mongoose.connect(process.env.DB_URL);
+mongoose.connect(process.env.DB_URL ? process.env.DB_URL : 'mongodb://localhost:27017/mydb');
 
 app.use(cors());
 
@@ -37,11 +37,11 @@ app.post('/signup', celebBodyUserCreate, createUser);
 app.post('/signin', celebBodyAuth, login);
 app.use('/users', auth, usersRouter);
 app.use('/cards', auth, cardsRouter);
-
-app.use(errorLogger);
-app.use('/*', (req, res, next) => {
+app.use('/*', auth, (req, res, next) => {
   next(new NotFoundError('Страница с таким адресом не найдена'));
 });
+
+app.use(errorLogger);
 
 app.use(errors());
 

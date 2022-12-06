@@ -8,6 +8,7 @@ module.exports.auth = (req, res, next) => {
 
   if (!authorization || !authorization.startsWith('Bearer')) {
     next(new UnauthorizedError('Требуется авторизация'));
+    return;
   }
 
   const token = authorization.replace(regEx, '');
@@ -15,7 +16,7 @@ module.exports.auth = (req, res, next) => {
   let payload;
 
   try {
-    payload = jwt.verify(token, process.env.NODE_ENV !== 'production' ? process.env.JWT_SALT : 'dev');
+    payload = jwt.verify(token, process.env.NODE_ENV === 'production' ? process.env.JWT_SALT : 'dev');
     req.user = payload;
     next();
   } catch (err) {
