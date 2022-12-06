@@ -45,7 +45,7 @@ function App() {
       Promise.all([getUser, getCards])
         .then(([userData, cards]) => {
           setCurrentUser(userData)
-          setCards(cards)
+          setCards(cards.reverse())
 
         })
         .catch(err => console.log(err))
