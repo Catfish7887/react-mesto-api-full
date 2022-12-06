@@ -1,0 +1,17 @@
+.authorization__button {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.8s ease;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.authorization__button:hover{
+  opacity: .6;
+}

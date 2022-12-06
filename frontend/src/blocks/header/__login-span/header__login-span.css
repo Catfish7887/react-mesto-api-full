@@ -1,0 +1,10 @@
+.header__login-span{
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+  height: 22px;
+  margin-right: 24px;
+}

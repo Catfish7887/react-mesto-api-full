@@ -1,0 +1,9 @@
+.profile__flex-container{
+  display: flex;
+}
+
+@media screen and (max-width: 779px) {
+  .profile__flex-container{
+    margin-left: 30px;
+  }
+}
